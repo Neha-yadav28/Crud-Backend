@@ -13,6 +13,6 @@ router.delete("/:id", students.delete);
 // Update a Tutorial with id
 router.put("/:id", students.update);  
 
-router.get("/:name", students.filter);
+
 
 module.exports =router;

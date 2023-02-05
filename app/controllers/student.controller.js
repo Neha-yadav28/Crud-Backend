@@ -67,29 +67,7 @@ exports.update = (req , res) => {
     });
 };
 
-Student.filter=(req , res)=>{
-  const name=req.params.name;
 
-  Student.select(req.body,{
-    where:{name:name}
-  })
-  .then(num => {
-    if (num == 1) {
-      res.send({
-        message: "Student was filtered successfully."
-      });
-    } else {
-      res.send({
-        message: `Cannot filter Student with name=${name}. Maybe Student was not found or req.body is empty!`
-      });
-    }
-  })
-  .catch(err => {
-    res.status(500).send({
-      message: "Error updating Student with name=" + name
-    });
-  });
-}
 // Delete a Tutorial with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
